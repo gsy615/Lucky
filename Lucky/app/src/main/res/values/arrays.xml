@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <string-array name="reward_type">
+        <item>五等奖</item>
+        <item>四等奖</item>
+        <item>三等奖</item>
+        <item>二等奖</item>
+        <item>一等奖</item>
+    </string-array>
+
+    <string-array name="member_type">
+        <item>未中奖</item>
+        <item>全&#8195;员</item>
+    </string-array>
+
+</resources>

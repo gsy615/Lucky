@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">年会抽奖</string>
+    <string name="over_reward">已抽</string>
+    <string name="num">人</string>
+    <string name="congratulations">恭喜</string>
+    <string name="get">获得</string>
+</resources>

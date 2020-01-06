@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/luck_draw_bg"
+    android:orientation="vertical"
+    android:padding="5dp"
+    tools:context=".ui.MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="536dp"
+            android:layout_height="89dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="fitXY"
+            android:src="@drawable/xy_name"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/setting_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="right"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/settings_button"
+            tools:ignore="ContentDescription,RtlHardcoded" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/reward_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/slice_winning_label_bg"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp">
+
+                <com.gz.lucky.view.AutoPollRecyclerView
+                    android:id="@+id/reward_rv"
+                    android:layout_width="200dp"
+                    android:layout_height="190dp"
+                    android:layout_gravity="center_horizontal"
+                    android:scrollbars="none" />
+
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/reward_title_im"
+                android:layout_width="154dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="fitXY"
+                android:src="@drawable/winning_label"
+                tools:ignore="ContentDescription" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="400dp"
+                android:layout_height="350dp"
+                tools:ignore="UselessParent">
+
+                <ImageView
+                    android:layout_width="343dp"
+                    android:layout_height="300dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/luck_draw"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/photo_bg"
+                    tools:ignore="ContentDescription" />
+
+                <com.gz.lucky.view.AutoPollCheckRecyclerView
+                    android:id="@+id/check_rv"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="11dp"
+                    android:scrollbars="none" />
+
+                <TextView
+                    android:id="@+id/check_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="58dp"
+                    android:textColor="@color/text_color" />
+
+                <Button
+                    android:id="@+id/start_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="140dp"
+                    android:background="@drawable/start_btn_selector"
+                    tools:ignore="HardcodedText" />
+
+                <ImageView
+                    android:id="@+id/reward_type_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="107dp"
+                    android:src="@drawable/winning_5"
+                    tools:ignore="ContentDescription" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/setting_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="@drawable/slice_settings_bg"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingTop="15dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="15dp"
+            android:visibility="invisible"
+            tools:ignore="RtlHardcoded">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="奖项设置"
+                android:textColor="@color/text_color"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/settings_line"
+                tools:ignore="ContentDescription" />
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/over_reward_num_ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" />
+
+                <RadioGroup
+                    android:id="@+id/reward_rg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:orientation="vertical" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="人员选择"
+                android:textColor="@color/text_color"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/settings_line"
+                tools:ignore="ContentDescription" />
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/over_member_num_ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+                <RadioGroup
+                    android:id="@+id/num_rg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="40dp"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:orientation="vertical" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+                    android:text="中奖信息"
+                    android:textColor="@color/text_color"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/open_bg"
+                        tools:ignore="ContentDescription" />
+
+                    <Button
+                        android:id="@+id/switch_btn_off"
+                        android:layout_width="40dp"
+                        android:layout_height="20.51dp"
+                        android:layout_gravity="left"
+                        android:layout_margin="1.5dp"
+                        android:background="@drawable/open_off"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/switch_btn_on"
+                        android:layout_width="40dp"
+                        android:layout_height="20.51dp"
+                        android:layout_gravity="right"
+                        android:layout_margin="1.5dp"
+                        android:background="@drawable/open_on"
+                        android:visibility="visible" />
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/clearall_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/clear_button" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>
