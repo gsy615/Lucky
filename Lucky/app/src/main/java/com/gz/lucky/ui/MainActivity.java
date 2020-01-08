@@ -289,9 +289,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void reverdInfo() {
         Set<String> rewardSet = new HashSet<>();
+
         rewardSet = SharedPreferencesUtil.getSharedPreferencesSet(this, "rewardSet", rewardSet);
         if (rewardSet.size() > 0) {
+            String[] rewardArr = new String[rewardSet.size()];
             for (String str : rewardSet) {
+                String[] sets = str.split("_");
+                rewardArr[Integer.parseInt(sets[4])] = str;
+            }
+            for (String str : rewardArr) {
                 String[] sets = str.split("_");
                 updateRewardData(sets[0], sets[1], sets[2], 0);
             }
@@ -349,7 +355,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Set<String> rewardSet = new HashSet<>();
             for (int i = 0; i < mRewardInfoList.size(); i++) {
                 RewardBean rewardBean = mRewardInfoList.get(i);
-                rewardSet.add(rewardBean.getName() + "_" + rewardBean.getInfo() + "_" + rewardBean.getId() + "_" + rewardBean.getTime());
+                rewardSet.add(rewardBean.getName() + "_" + rewardBean.getInfo() + "_" + rewardBean.getId() + "_" + rewardBean.getTime() + "_" + i);
             }
             SharedPreferencesUtil.editorSharedPreferences(this, "rewardSet", rewardSet);
         }
