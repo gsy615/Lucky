@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.GridView;
 import android.widget.TextView;
 
 import com.gz.lucky.R;
@@ -15,7 +14,6 @@ import java.util.List;
 public class ShowDialog extends Dialog {
 
     private Context mContext;
-    private TextView mTextView;
     private List<RewardBean> mData;
 
     public ShowDialog(Context context, int theme, List<RewardBean> data) {
@@ -28,12 +26,31 @@ public class ShowDialog extends Dialog {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show_dialog);
-        mTextView = findViewById(R.id.show_dialog_tv);
-        StringBuilder content = new StringBuilder();
+        TextView mTextView = findViewById(R.id.show_dialog_tv);
+
+        String[] rewardTypeStr = mContext.getResources().getStringArray(R.array.reward_type);
+        StringBuilder[] contents = new StringBuilder[rewardTypeStr.length];
+        int[] indexs = new int[rewardTypeStr.length];
         for (int i = 0; i < mData.size(); i++) {
-            content.append(mData.get(i).getName()).append(mData.get(i).getInfo()).append("  ");
-            if (i % 6 == 0 && i != 0) {
-                content.append("\n\r");
+            for (int j = 0; j < rewardTypeStr.length; j++) {
+                if (rewardTypeStr[j].equals(mData.get(i).getInfo())) {
+                    if (contents[j] == null) {
+                        contents[j] = new StringBuilder();
+                        contents[j].append(rewardTypeStr[j]).append("\n\r");
+                    }
+                    contents[j].append(mData.get(i).getName()).append("  ");
+                    indexs[j]++;
+                    if (indexs[j] % 6 == 0) {
+                        contents[j].append("\n\r");
+                    }
+                }
+            }
+
+        }
+        StringBuilder content = new StringBuilder();
+        for (int i = contents.length - 1; i >= 0; i--) {
+            if (contents[i] != null) {
+                content.append(contents[i]).append("\n\r\n\r");
             }
         }
         mTextView.setText(content.toString());
