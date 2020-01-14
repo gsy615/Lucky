@@ -2,6 +2,7 @@
 <resources>
 
     <string-array name="reward_type">
+        <item>阳光普照</item>
         <item>五等奖</item>
         <item>四等奖</item>
         <item>三等奖</item>

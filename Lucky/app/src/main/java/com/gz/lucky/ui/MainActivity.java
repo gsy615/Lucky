@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         LinearLayout mOverMemberNumLayout = findViewById(R.id.over_member_num_ll);
         mRewardTypeStr = this.getResources().getStringArray(R.array.reward_type);
         mMemberTypeStr = this.getResources().getStringArray(R.array.member_type);
-        mRewardTypeTitleIm.setImageDrawable(getResources().getDrawable(R.drawable.winning_5));
+        mRewardTypeTitleIm.setImageDrawable(getResources().getDrawable(R.drawable.winning_6));
         mRewardTypeTvs = new TextView[mRewardTypeStr.length];
         for (int i = 0; i < mRewardTypeStr.length; i++) {
             mRewardTypeTvs[i] = createTv(mRewardTypeStr[i]);
@@ -199,22 +199,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mRewardType = id - 1991;
                 switch (mRewardType) {
                     case 0:
-                        mRewardTypeTitleIm.setImageDrawable(getResources().getDrawable(R.drawable.winning_5));
+                        mRewardTypeTitleIm.setImageDrawable(getResources().getDrawable(R.drawable.winning_6));
                         break;
                     case 1:
-                        mRewardTypeTitleIm.setImageDrawable(getResources().getDrawable(R.drawable.winning_4));
+                        mRewardTypeTitleIm.setImageDrawable(getResources().getDrawable(R.drawable.winning_5));
                         break;
                     case 2:
-                        mRewardTypeTitleIm.setImageDrawable(getResources().getDrawable(R.drawable.winning_3));
+                        mRewardTypeTitleIm.setImageDrawable(getResources().getDrawable(R.drawable.winning_4));
                         break;
                     case 3:
-                        mRewardTypeTitleIm.setImageDrawable(getResources().getDrawable(R.drawable.winning_2));
+                        mRewardTypeTitleIm.setImageDrawable(getResources().getDrawable(R.drawable.winning_3));
                         break;
                     case 4:
+                        mRewardTypeTitleIm.setImageDrawable(getResources().getDrawable(R.drawable.winning_2));
+                        break;
+                    case 5:
                         mRewardTypeTitleIm.setImageDrawable(getResources().getDrawable(R.drawable.winning_1));
                         break;
                     default:
-                        mRewardTypeTitleIm.setImageDrawable(getResources().getDrawable(R.drawable.winning_5));
+                        mRewardTypeTitleIm.setImageDrawable(getResources().getDrawable(R.drawable.winning_6));
                         break;
                 }
 
