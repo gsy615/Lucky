@@ -40,7 +40,7 @@ public class ShowDialog extends Dialog {
                     }
                     contents[j].append(mData.get(i).getName()).append("  ");
                     indexs[j]++;
-                    if (indexs[j] % 6 == 0) {
+                    if (indexs[j] % 10 == 0) {
                         contents[j].append("\n\r");
                     }
                 }
